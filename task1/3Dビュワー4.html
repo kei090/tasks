@@ -1,0 +1,117 @@
+﻿<html>
+  <head>
+    <title>3Dビュワー</title>
+    <script type="text/javascript">
+
+	var i=0;
+
+
+
+
+
+
+
+
+      function init(){
+        var canvas = document.getElementById('tutorial');
+        if (canvas.getContext){
+          var ctx = canvas.getContext('2d');
+	  setInterval(draw, 33);
+	}
+
+	function draw(){
+
+	
+	var si=i*(Math.PI)/180;
+	var fa=i*(Math.PI)/180;
+
+	var sinsi=Math.sin(si);
+	var cossi=Math.cos(si);
+	var sinfa=Math.sin(fa);
+	var cosfa=Math.cos(fa);
+
+	var a1x=0;
+	var a1y=0;
+	var a2x=0;
+	var a2y=cosfa*100;
+	var a3x=cossi*100;
+	var a3y=(-sinfa*sinsi+cosfa)*100;
+	var a4x=cossi*100;
+	var a4y=(-sinfa*sinsi)*100;
+	var a5x=(-sinsi+cossi)*100;
+	var a5y=(-sinfa*cossi-sinfa*sinsi)*100;
+	var a6x=(-sinsi+cossi)*100;
+	var a6y=(-sinfa*cossi-sinfa*sinsi+cosfa)*100;
+	var a7x=-sinsi*100;
+	var a7y=-sinfa*cossi*100;
+	var a8x=-sinsi*100;
+	var a8y=(-sinfa*cossi+cosfa)*100;
+
+
+
+
+
+	   
+	ctx.clearRect(0,0,400,300);
+	    ctx.beginPath();
+	ctx.moveTo(a1x+200,a1y+150);
+	ctx.lineTo(a2x+200,a2y+150);
+	ctx.stroke();
+	ctx.moveTo(a1x+200,a1y+150);
+	ctx.lineTo(a7x+200,a7y+150);
+	ctx.stroke();
+	ctx.moveTo(a7x+200,a7y+150);
+	ctx.lineTo(a8x+200,a8y+150);
+	ctx.stroke();
+	ctx.moveTo(a2x+200,a2y+150);
+	ctx.lineTo(a3x+200,a3y+150);
+	ctx.stroke();
+	ctx.moveTo(a1x+200,a1y+150);
+	ctx.lineTo(a4x+200,a4y+150);
+	ctx.stroke();
+	ctx.moveTo(a3x+200,a3y+150);
+	ctx.lineTo(a4x+200,a4y+150);
+	ctx.stroke();
+	ctx.moveTo(a4x+200,a4y+150);
+	ctx.lineTo(a5x+200,a5y+150);
+	ctx.stroke();
+	ctx.moveTo(a5x+200,a5y+150);
+	ctx.lineTo(a7x+200,a7y+150);
+	ctx.stroke();
+	ctx.moveTo(a6x+200,a6y+150);
+	ctx.lineTo(a8x+200,a8y+150);
+	ctx.stroke();
+	ctx.moveTo(a5x+200,a5y+150);
+	ctx.lineTo(a6x+200,a6y+150);
+	ctx.stroke();
+	ctx.moveTo(a3x+200,a3y+150);
+	ctx.lineTo(a6x+200,a6y+150);
+	ctx.stroke();
+	ctx.moveTo(a2x+200,a2y+150);
+	ctx.lineTo(a8x+200,a8y+150);
+	ctx.stroke();
+	    
+
+	i=i+1
+        }
+
+
+      }
+    </script>
+    <style type="text/css">
+      canvas { border: 1px solid #999; }
+
+
+
+    </style>
+  </head>
+
+
+  <body onload="init();">
+    <canvas id="tutorial" width="400" height="300"></canvas>
+
+	
+  </body>
+
+</html>
+
